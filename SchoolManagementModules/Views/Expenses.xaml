@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="SchoolManagementModules.Views.Expenses"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SchoolManagementModules.Views"
+             xmlns:data="clr-namespace:SchoolManagementModules.ViewModels"
+             xmlns:resource="clr-namespace:SchoolManagementModules"
+             
+             Background="SteelBlue"
+             mc:Ignorable="d" Height="773.62" Width="950.782">
+
+    <Border BorderBrush="Black" BorderThickness="2" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"></RowDefinition>
+                <RowDefinition Height="0.3*" ></RowDefinition>
+                <RowDefinition Height="0.3*" ></RowDefinition>
+                <RowDefinition Height="0.3*" ></RowDefinition>
+                <RowDefinition Height="0.3*" ></RowDefinition>
+                <RowDefinition Height="0.3*" ></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.3*"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Margin="10,20,10,10" Style="{StaticResource PrimaryLabelCenter}" Grid.ColumnSpan="2" Background="Orange" Foreground="Black" Content="Expense Summary" FontWeight="Bold" FontSize="15"></Label>
+            <Label Margin="10,10,10,10" Grid.Column="0" Grid.Row="1" Style="{StaticResource PrimaryLabel}" Background="Orange" Content="Expense Type: " FontSize="15" FontWeight="Bold" Foreground="Black"></Label>
+            <Label Margin="10,10,10,10" Grid.Column="0" Grid.Row="2" Style="{StaticResource PrimaryLabel}" Background="Orange" Content="Expense Description: " FontSize="15" FontWeight="Bold" Foreground="Black"></Label>
+            <Label Margin="10,10,10,10" Grid.Column="0" Grid.Row="3" Style="{StaticResource PrimaryLabel}" Background="Orange" Content="Expense Amount: " FontSize="15" FontWeight="Bold" Foreground="Black"></Label>
+            <Label Margin="10,10,10,10" Grid.Column="0" Grid.Row="4" Style="{StaticResource PrimaryLabel}" Background="Orange" Content="Expense Date: " FontSize="15" FontWeight="Bold" Foreground="Black"></Label>
+            <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="0.2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid  Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel Grid.Column="0">
+                        <Label Style="{StaticResource PrimaryLabel}" Background="Orange" Foreground="Black" Content="Start Date: " Width="90" FontWeight="Bold" FontSize="15"></Label>
+                        <DatePicker BorderBrush="Black" BorderThickness="2" Margin="3"  Background="Orange" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15"></DatePicker>
+                    </DockPanel>
+                    <DockPanel Grid.Column="1">
+                        <Label Style="{StaticResource PrimaryLabel}" Background="Orange" Foreground="Black" Content="End Date: " Width="90" FontWeight="Bold" FontSize="15"></Label>
+                        <DatePicker BorderBrush="Black" BorderThickness="2" Margin="3"   Background="Orange" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15"></DatePicker>
+                    </DockPanel>
+                    <Button Grid.Column="2" Style="{StaticResource PrimaryButton}" Content="Run" Foreground="Black" FontWeight="Bold" FontSize="15"></Button>
+                </Grid>
+            </Grid>
+            <ComboBox Grid.Row="1" Grid.Column="1"  Margin="10,0,10,0" Style="{StaticResource ComboboxStyle  }" Background="Orange" Foreground="Black"  FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"  Height="40"  />
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="10,0,10,0"  Style="{StaticResource PrimaryTextBox}" Background="Orange" Foreground="Black"  FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="700"  Height="40"  />
+            <TextBox Grid.Row="3" Grid.Column="1" Margin="10,0,10,0"  Style="{StaticResource PrimaryTextBox}" Background="Orange" Foreground="Black"  FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"  Height="40"  />
+            <DatePicker Grid.Row="4" Grid.Column="1" Margin="10,0,10,0" Background="Orange" Foreground="Black"  FontSize="15" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="300"  Height="40" BorderBrush="Black" BorderThickness="2"   />
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="364*"></ColumnDefinition>
+                    <ColumnDefinition Width="117*"></ColumnDefinition>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="147*"/>
+                </Grid.ColumnDefinitions>
+                <Button  Grid.Column="0" Command="{Binding Cancel}" Margin="10" Style="{StaticResource PrimaryButton}" Content="Cancel"  Foreground="Black" FontWeight="Bold" FontSize="15"></Button>
+                <Button  Grid.Column="1" Command="{Binding Save}" Margin="10" Style="{StaticResource PrimaryButton}" Content="Save"  Foreground="Black" FontWeight="Bold" FontSize="15" Grid.ColumnSpan="3"></Button>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
